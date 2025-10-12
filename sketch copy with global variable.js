@@ -3,12 +3,15 @@ let headX=20;
 let headY=20;
 let foodX;
 let foodY;
+let width=600;
+let numberOfCells = width/GRID_SIZE;
+let randomCell;
+let randomCellFloor;
 
 function setup(){
 createCanvas(600,600);
-let numberOfCells = width/GRID_SIZE;
-let randomCell = random(numberOfCells);
-let randomCellFloor = floor(randomCell);
+randomCell = random(numberOfCells);
+randomCellFloor = floor(randomCell);
 foodX= randomCellFloor*GRID_SIZE+GRID_SIZE/2;
 foodY= randomCellFloor*GRID_SIZE+GRID_SIZE/2;
 }
