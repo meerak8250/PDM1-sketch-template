@@ -6,11 +6,16 @@ let foodY;
 
 function setup(){
 createCanvas(600,600);
-let numberOfCells = width/GRID_SIZE;
-let randomCell = random(numberOfCells);
-let randomCellFloor = floor(randomCell);
-foodX= randomCellFloor*GRID_SIZE+GRID_SIZE/2;
-foodY= randomCellFloor*GRID_SIZE+GRID_SIZE/2;
+//for X value of food
+let numberOfCellsX = width/GRID_SIZE;
+let randomCellX = random(numberOfCellsX);
+let randomCellFloorX = floor(randomCellX);
+foodX= randomCellFloorX*GRID_SIZE+GRID_SIZE/2;
+//for Y value of food
+let numberOfCellsY = height/GRID_SIZE;
+let randomCellY = random(numberOfCellsY);
+let randomCellFloorY = floor(randomCellY);
+foodY= randomCellFloorY*GRID_SIZE+GRID_SIZE/2;
 }
 
 function draw(){
