@@ -3,8 +3,8 @@ let headX=20;
 let headY=20;
 let foodX;
 let foodY;
-let distFromCentre= 250;
-let move= 20;
+let xDir= 1;
+let yDir= 0;
 
 function setup(){
 createCanvas(600,600);
@@ -28,25 +28,22 @@ circle(foodX,foodY,GRID_SIZE);
 
 //to make the snake head move
 function keyPressed(){
-    if (keyCode === UP_ARROW || key === "w");
-        if(y > distFromCentre);{
-            y -=move;
+    if (keyCode === UP_ARROW || key === "w");{
+        xDir= 0;
+        yDir= -1;
         }
 
     if (keyCode === LEFT_ARROW || key === "a") {
-        if (x > distFromCentre) {
-            x -= move;
-        }
+        xDir= -1;
+        yDir= 0;
     }
     
-    else if (keyCode === RIGHT_ARROW || key === "d") {
-        if (x < width - distFromCentre) {
-            x += move;
-        }
+    if (keyCode === RIGHT_ARROW || key === "d") {
+        xDir= 1;
+        yDir= 0;
     }
-    else if (keyCode === DOWN_ARROW || key === "s") {
-        if (y < height - distFromCentre) {
-            y += move;
-        }
+    if (keyCode === DOWN_ARROW || key === "s") {
+        xDir= 0;
+        yDir= 1;
     }     
 }
