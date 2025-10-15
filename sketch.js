@@ -21,29 +21,25 @@ let randomCellFloorY = floor(randomCellY);
 foodY= randomCellFloorY*GRID_SIZE+GRID_SIZE/2;
 frameRate(3);
 }
-
+//declare functions/ have a background
 function draw(){
 background(0);    
-circle(foodX,foodY,GRID_SIZE);
 isGameOver();
+food();
 }
 
+//initial food
+function food(){
+    fill(255);
+    circle(foodX,foodY,GRID_SIZE);
+}
+
+//initial snake
 function snake(){
 fill(255);
 square(headX,headY,GRID_SIZE);
 headX+= GRID_SIZE * xDir;
 headY+= GRID_SIZE * yDir; //WHY DOES THIS WORK?
-}
-
-function isGameOver(){
-    if (!gameOver){
-        snake();
-    }   
-    if (headX>=width||headX<0||headY>=height||headY<0){
-        frameRate(0);
-        gameOver=true;
-        return gameOver;
-    }
 }
 
 //to make the snake head move
@@ -67,3 +63,17 @@ function keyPressed(){
         yDir= 1; //y axis
     }     
 }
+
+//seeing if game ends/ player can continue to play
+function isGameOver(){
+    if (!gameOver){
+        snake();
+    }   
+    if (headX>=width||headX<0||headY>=height||headY<0){ 
+    //if the snake head is >= the width or the height then it will stop moving so that it doesnt go out of bounds
+        frameRate(0);
+        gameOver=true;
+        return gameOver;
+    }
+}
+
